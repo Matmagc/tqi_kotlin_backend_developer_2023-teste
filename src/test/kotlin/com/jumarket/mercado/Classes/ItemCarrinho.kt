@@ -1,8 +1,13 @@
 package com.jumarket.mercado.Classes
 
-import org.springframework.boot.autoconfigure.domain.EntityScan
+import jakarta.persistence.Embedded
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 
 // Classe para representar o carrinho de compras
+@Entity
+@Table(name = "Carrinho")
 data class ItemCarrinho(
-    val produto: Produto,
-    var quantidade: Int)
+    @Embedded val produto: Produto,
+    var quantidade: Int )

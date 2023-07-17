@@ -5,7 +5,7 @@ import jakarta.persistence.*
 // Classe para representar um produto
 @Entity
 @Table(name = "Produtos")
-data class Produto(
+data class  Produto(
     @Column(nullable = false) var nome: String,
     @Column(nullable = false) var unidade: String,
     @Column(nullable = false) var preco: Double,

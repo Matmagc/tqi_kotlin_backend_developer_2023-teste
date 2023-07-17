@@ -1,7 +1,11 @@
 package com.jumarket.mercado.Classes
 
-// Classe para representar o carrinho de compras
+import jakarta.persistence.*
 
+// Classe para representar o carrinho de compras
+@Entity
+@Table(name = "Carrinho")
 data class ItemCarrinho(
-    val produto: Produto,
-    var quantidade: Int)
+    @OneToMany @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = null,
+    @Embedded val produto: Produto,
+    var quantidade: Int )

@@ -1,6 +1,9 @@
 package com.jumarket.mercado.Classes
 
 import jakarta.persistence.Embedded
+import org.springframework.beans.factory.annotation.Autowired
+
+
 
 // Classe para representar a mercearia
 
@@ -8,10 +11,9 @@ class Mercearia {
     private val produtos = mutableListOf<Produto>()
     private val carrinho = mutableListOf<ItemCarrinho>()
 
-
     // Método para cadastrar um produto
 
-    fun cadastrarProduto(nome: String, unidade: String, preco: Double, categoria: String, id: Long) {
+     fun cadastrarProduto(nome: String, unidade: String, preco: Double, categoria: String, id: Long) {
         val produto = Produto(nome, unidade, preco,categoria, id)
         produtos.add(produto)
     }
