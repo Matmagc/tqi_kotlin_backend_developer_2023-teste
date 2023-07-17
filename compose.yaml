@@ -1,1 +1,2 @@
 services:
+  image: oscarfonts/h2
